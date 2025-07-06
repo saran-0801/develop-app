@@ -1,23 +1,65 @@
 import React from 'react';
-import { Card, CardContent, Typography, IconButton, Grid } from '@mui/material';
+import {
+  Table, TableBody, TableCell, TableContainer,
+  TableHead, TableRow, Paper, Button
+} from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const DataCard = ({ item, onEdit, onDelete }) => (
-  <Grid item xs={12} sm={6} md={4}>
-    <Card>
-      <CardContent>
-        <Typography variant="h6">{item.name}</Typography>
-        <Typography>Age: {item.age}</Typography>
-        <Typography>Phone: {item.phone}</Typography>
-        <Typography>Gender: {item.gender}</Typography>
-        <div style={{ marginTop: 10 }}>
-          <IconButton color="primary" onClick={onEdit}><EditIcon /></IconButton>
-          <IconButton color="error" onClick={onDelete}><DeleteIcon /></IconButton>
-        </div>
-      </CardContent>
-    </Card>
-  </Grid>
+
+
+
+const UserDataCard = ({ users, handleEdit, handleDelete }) => (
+  console.log(users, "users in UserDataCard"),
+  <TableContainer component={Paper}>
+    <Table>
+      <TableHead sx={{ backgroundColor: '#f0f0f0' }}>
+        <TableRow>
+          <TableCell><strong>Name</strong></TableCell>
+          <TableCell><strong>Email</strong></TableCell>
+          <TableCell><strong>Age</strong></TableCell>
+          <TableCell><strong>Phone</strong></TableCell>
+          <TableCell><strong>Gender</strong></TableCell>
+          <TableCell><strong>Action</strong></TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {users && users.length === 0 ? (
+          <TableRow>
+            <TableCell colSpan={6} align="center">
+              No users yet.
+            </TableCell>
+          </TableRow>
+        ) : (
+          users && users.map((user, index) => (
+            <TableRow key={index}>
+              <TableCell>{user.name}</TableCell>
+              <TableCell>{user.emailId}</TableCell>
+              <TableCell>{user.age}</TableCell>
+              <TableCell>{user.phone}</TableCell>
+              <TableCell>{user.gender}</TableCell>
+              <TableCell>
+                <Button
+                  size="small"
+                  sx={{ mr: 1 }}
+                  onClick={() => handleEdit(index)}
+                >
+                  <EditIcon />
+                </Button>
+                <Button
+                  color="error"
+                  size="small"
+                  onClick={() => handleDelete(index)}
+                >
+                  <DeleteIcon />
+                </Button>
+              </TableCell>
+            </TableRow>
+          ))
+        )}
+      </TableBody>
+    </Table>
+  </TableContainer>
 );
 
-export default DataCard;
+export default UserDataCard;
