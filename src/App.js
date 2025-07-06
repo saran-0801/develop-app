@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import ItemViewScreen from './Components/DropDownList';
 import _dataTable from './Components/listData';
 import FormData from './Components/FormData';
+import UserTable from './Components/JsonData';
+import ProductList from './Components/ProductData';
 
 const App = () => {
 
@@ -19,6 +21,8 @@ const App = () => {
       <_dataTable _data={myData} />
       <ItemViewScreen />
       <FormData/>
+      <UserTable />
+      <ProductList />
     </div>
   );
 }
