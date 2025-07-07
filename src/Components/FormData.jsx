@@ -106,7 +106,19 @@ const FormData = () => {
     setEditIndex(null);
   };
 
-  console.log(users, "users in FormDataiiiiiiiiiiiiiiiii");
+  function indroduce(age,occupation) {
+    return this.FirstName+ ''+ this.LastName + ' is ' + age + ' years old and works as a ' + occupation;
+  }
+
+  const person1 = {
+    FirstName: 'Saran',
+    LastName: 'Gnanavel',
+  }
+
+  indroduce.call(person1,'25','web developer');
+  console.log(indroduce.call(person1,'25','web developer'), 'call');
+
+  
 
   return (
     <Grid container spacing={4} sx={{ padding: 4 }}>

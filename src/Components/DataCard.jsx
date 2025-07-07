@@ -40,6 +40,7 @@ const UserDataCard = ({ users, handleEdit, handleDelete }) => (
               <TableCell>{user.gender}</TableCell>
               <TableCell>
                 <Button
+                  style={{ color: 'skyblue' }}
                   size="small"
                   sx={{ mr: 1 }}
                   onClick={() => handleEdit(index)}
@@ -47,7 +48,7 @@ const UserDataCard = ({ users, handleEdit, handleDelete }) => (
                   <EditIcon />
                 </Button>
                 <Button
-                  color="error"
+                  style={{ color: '#fa0217' }}
                   size="small"
                   onClick={() => handleDelete(index)}
                 >
