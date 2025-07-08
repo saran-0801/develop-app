@@ -1,0 +1,35 @@
+
+.container {
+  padding: 17px !important;
+}
+
+.search-box {
+  margin-bottom: 20px !important;
+  width: 300px;
+}
+
+.table-head {
+  background-color: #4e1bb5 !important;
+}
+
+.table-head-cell {
+  color: white !important;
+  font-family: 'Times New Roman', Times, serif !important;
+  text-align: center !important;
+  font-size: 17px !important;
+}
+
+.table-cell {
+  color: #000;
+  font-family: 'Times New Roman', Times, serif !important;
+  text-align: center !important;
+  font-size: 17px !important;
+}
+
+.pagination {
+  color: #4e1bb5;
+  margin-top: 17px;
+  display: flex;
+  font-family: 'Times New Roman', Times, serif !important;  
+  justify-content: end;
+}
